@@ -14,7 +14,12 @@ defmodule Raccoon.Router do
   end
 
    # Other scopes may use custom stacks.
-   scope "/api", Raccoon do
+   scope "/api", Raccoon.Api do
      pipe_through :api
+
+     scope "/v1", V1 do
+
+      resources "users", UserController, except: [:index, :update]
+     end
    end
 end

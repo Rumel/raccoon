@@ -17,8 +17,13 @@ defmodule Raccoon.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [mod: {Raccoon, []},
-     applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex]]
+     applications: [:phoenix, 
+                    :phoenix_html, 
+                    :cowboy, 
+                    :logger,
+                    :phoenix_ecto, 
+                    :postgrex,
+                    :comeonin]]
   end
 
   # Specifies which paths to compile per environment
@@ -34,6 +39,8 @@ defmodule Raccoon.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.1"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:comeonin, "~> 1.2"},
+     {:poison, "~> 1.5"}]
   end
 end
